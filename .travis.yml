@@ -16,4 +16,4 @@ before_script:
 script:
   - ng build --prod
   
-  script: mvn clean verify
+  script: mvn clean install
