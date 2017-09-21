@@ -12,8 +12,7 @@ branches:
 
 before_script:
   - npm install -g @angular/cli
-
-script:
-  - ng build --prod
   
-  script: mvn clean install
+  script: 
+  - ng build
+  - mvn clean install
