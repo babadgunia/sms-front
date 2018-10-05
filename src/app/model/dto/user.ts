@@ -1,8 +1,8 @@
 // model > entity
-import {AbstractEntity} from './abstract-entity';
+import {AbstractDto} from './abstract-dto';
 import {UserGroup} from './user-group';
 
-export class User extends AbstractEntity {
+export class User extends AbstractDto {
 
 	id: number;
 

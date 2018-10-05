@@ -3,23 +3,23 @@ import {Inject, Injectable} from '@angular/core';
 // angular > http
 import {HttpClient} from '@angular/common/http';
 // model > entity
-import {UserGroup} from '../model/entity/user-group';
+import {UserGroup} from '../model/dto/user-group';
 // model > filter
 import {UserGroupFilter} from '../model/filter/user-group-filter';
 // model > enum
-import {HttpRequestType} from '../model/enum/http-request-type.enum';
+import {HttpRequestType} from '../model/type/http-request-type.enum';
 // service
 import {AbstractService} from './abstract-service';
 // util
-import {USER_GROUP_SERVICE_URL} from '../util/injectable-constants';
+import {USER_GROUP_SERVICE_URL} from '../util/static/injectable-constants';
 // rxjs
 import {Observable} from "rxjs/internal/Observable";
 
 @Injectable()
 export class UserGroupService extends AbstractService {
 
-	public constructor(http: HttpClient, @Inject(USER_GROUP_SERVICE_URL) baseUrl: string) {
-		super(http, baseUrl);
+	public constructor(http: HttpClient, @Inject(USER_GROUP_SERVICE_URL) serviceUrl: string) {
+		super(http, serviceUrl);
 	}
 
 	public add(entity: UserGroup): Observable<UserGroup> {

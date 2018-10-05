@@ -3,15 +3,15 @@ import {Inject, Injectable} from '@angular/core';
 // angular > http
 import {HttpClient} from '@angular/common/http';
 // model > entity
-import {Text} from '../model/entity/text';
+import {Text} from '../model/dto/text';
 // model > filter
 import {TextFilter} from '../model/filter/text-filter';
 // model > enum
-import {HttpRequestType} from '../model/enum/http-request-type.enum';
+import {HttpRequestType} from '../model/type/http-request-type.enum';
 // service
 import {AbstractService} from './abstract-service';
 // util
-import {TEXT_SERVICE_URL} from '../util/injectable-constants';
+import {TEXT_SERVICE_URL} from '../util/static/injectable-constants';
 // rxjs
 import {Observable} from "rxjs/internal/Observable";
 

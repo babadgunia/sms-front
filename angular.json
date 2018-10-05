@@ -23,14 +23,31 @@
 							"src/assets"
 						],
 						"styles": [
+							"src/styles.css",
 							"node_modules/font-awesome/css/font-awesome.min.css",
 							"node_modules/primeng/resources/primeng.min.css",
-							"node_modules/primeng/resources/themes/omega/theme.css",
-							"src/styles.css"
+							"node_modules/primeng/resources/themes/omega/theme.css"
 						],
 						"scripts": []
 					},
 					"configurations": {
+						"test": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.test.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
+							"aot": true,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true
+						},
 						"production": {
 							"fileReplacements": [
 								{
@@ -56,6 +73,9 @@
 						"browserTarget": "sms-front:build"
 					},
 					"configurations": {
+						"test": {
+							"browserTarget": "sms-front:build:test"
+						},
 						"production": {
 							"browserTarget": "sms-front:build:production"
 						}
@@ -75,10 +95,10 @@
 						"tsConfig": "src/tsconfig.spec.json",
 						"karmaConfig": "src/karma.conf.js",
 						"styles": [
+							"src/styles.css",
 							"node_modules/font-awesome/css/font-awesome.min.css",
 							"node_modules/primeng/resources/primeng.min.css",
-							"node_modules/primeng/resources/themes/omega/theme.css",
-							"src/styles.css"
+							"node_modules/primeng/resources/themes/omega/theme.css"
 						],
 						"scripts": [],
 						"assets": [

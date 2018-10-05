@@ -1,8 +1,8 @@
 // angular > core
 import {Component} from '@angular/core';
 // model > entity
-import {I18nText} from '../../model/entity/i18n-text';
-import {Text} from '../../model/entity/text';
+import {I18nText} from '../../model/dto/i18n-text';
+import {Text} from '../../model/dto/text';
 // model > filter
 import {TextFilter} from '../../model/filter/text-filter';
 // component

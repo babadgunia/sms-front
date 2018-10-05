@@ -1,11 +1,11 @@
 // angular > core
 import {Component, OnInit} from '@angular/core';
 // model > entity
-import {User} from '../../model/entity/user';
-import {UserGroup} from '../../model/entity/user-group';
+import {User} from '../../model/dto/user';
+import {UserGroup} from '../../model/dto/user-group';
 // model > enum
-import {LanguageType} from '../../model/enum/language-type.enum';
-import {StatusType} from '../../model/enum/status-type.enum';
+import {LanguageType} from '../../model/type/language-type.enum';
+import {StatusType} from '../../model/type/status-type.enum';
 // model > filter
 import {UserFilter} from '../../model/filter/user-filter';
 // component

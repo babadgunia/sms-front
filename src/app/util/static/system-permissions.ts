@@ -1,6 +1,6 @@
 // model > enum
-import {PermissionGroupType} from '../model/enum/permission-group-type.enum';
-import {PermissionType} from '../model/enum/permission-type.enum';
+import {PermissionGroupType} from '../../model/type/permission-group-type.enum';
+import {PermissionType} from '../../model/type/permission-type.enum';
 // util
 import {SystemPermission} from './system-permission';
 
