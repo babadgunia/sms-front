@@ -1,9 +1,8 @@
-  language: node_js
+language: node_js
+
 node_js:
-  - "6.9"
+  - "8.12.0"
 
 before_script:
-- npm install -g angular-cli
-- npm install -g karma
 - npm install
 - ng build
