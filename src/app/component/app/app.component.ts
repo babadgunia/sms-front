@@ -23,11 +23,11 @@ export class AppComponent extends AbstractComponent {
 		super(confirmationService, messageService);
 	}
 
-	private isLoggedIn(): boolean {
+	public isLoggedIn(): boolean {
 		return AuthUtils.isLoggedIn();
 	}
 
-	private logout(): void {
+	public logout(): void {
 		AuthUtils.logout();
 
 		this.router.navigate(['/login']).then((result: boolean) => {}, (error: any) => {
