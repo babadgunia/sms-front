@@ -1,7 +1,0 @@
-CREATE DATABASE sms;
-\connect sms;
-CREATE SCHEMA sms;
-
-CREATE USER sms WITH SUPERUSER PASSWORD 'sms';
-
-GRANT ALL PRIVILEGES ON database sms TO sms;
