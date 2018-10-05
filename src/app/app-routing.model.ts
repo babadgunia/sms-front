@@ -10,7 +10,7 @@ import {TextsComponent} from './component/texts/texts.component';
 import {UserGroupsComponent} from './component/user-groups/user-groups.component';
 import {UsersComponent} from './component/users/users.component';
 // util
-import {CanActivateAuthGuard} from './util/can-activate.authguard';
+import {CanActivateAuthGuard} from './util/helper/can-activate.authguard';
 
 const routes: Routes = [
 	{path: '', redirectTo: 'userGroups', pathMatch: 'full'},

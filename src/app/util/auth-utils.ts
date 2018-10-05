@@ -3,7 +3,7 @@ import {HttpHeaders} from '@angular/common/http';
 // util
 import {Utils} from './utils';
 
-export class AuthenticationUtils {
+export class AuthUtils {
 
 	private constructor() {}
 
@@ -47,7 +47,7 @@ export class AuthenticationUtils {
 	public static login(username: string, token: string): void {
 		localStorage.setItem('currentUser', JSON.stringify({username: username, token: token}));
 
-		let permissionsStr = AuthenticationUtils.decodeToken(token).PERMISSIONS.map(function (element) {
+		let permissionsStr = AuthUtils.decodeToken(token).PERMISSIONS.map(function (element) {
 			return element.authority;
 		}).join();
 		localStorage.setItem('permissions', permissionsStr);

@@ -3,11 +3,11 @@ import {OnInit} from '@angular/core';
 // model > filter
 import {AbstractFilter} from '../model/filter/abstract-filter';
 // model > enum
-import {LanguageType} from '../model/enum/language-type.enum';
-import {StatusType} from '../model/enum/status-type.enum';
+import {LanguageType} from '../model/type/language-type.enum';
+import {StatusType} from '../model/type/status-type.enum';
 // util
-import {MESSAGES} from '../util/messages';
-import {AuthenticationUtils} from '../util/authentication-utils';
+import {MESSAGES} from '../util/static/messages';
+import {AuthUtils} from '../util/auth-utils';
 // primeng > model
 import {LazyLoadEvent} from 'primeng/components/common/lazyloadevent';
 import {SelectItem} from 'primeng/components/common/selectitem';
@@ -16,6 +16,7 @@ import {ConfirmationService} from 'primeng/components/common/confirmationservice
 import {MessageService} from 'primeng/components/common/messageservice';
 // rxjs
 import {isNumeric} from "rxjs/internal-compatibility";
+import {AppUtils} from "../util/app-utils";
 
 export abstract class AbstractComponent implements OnInit {
 
@@ -124,19 +125,12 @@ export abstract class AbstractComponent implements OnInit {
 
 	// check user permission
 	protected hasPermission(permission: string): boolean {
-		return AuthenticationUtils.hasPermission(permission);
+		return AuthUtils.hasPermission(permission);
 	}
 
 	// get i18n message
-	protected getMessage(key: string, ...params: any[]): string {
-		// TODO get user language
-		let value: string = MESSAGES[key]['en'];
-
-		for (let i = 0; i < params.length; i++) {
-			value = value.replace('{' + i + '}', params[i]);
-		}
-
-		return value;
+	public getMessage(key: string, ...params: any[]): string {
+		return AppUtils.getMessage(key, params);
 	}
 
 	// adds error message to the growl component

@@ -1,8 +1,8 @@
 // model > entity
-import {AbstractEntity} from './abstract-entity';
+import {AbstractDto} from './abstract-dto';
 import {I18nText} from './i18n-text';
 
-export class Text extends AbstractEntity {
+export class Text extends AbstractDto {
 
 	id: number;
 

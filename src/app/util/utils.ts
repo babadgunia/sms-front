@@ -1,6 +1,3 @@
-// util
-import {isNullOrUndefined} from 'util';
-
 export class Utils {
 
 	private constructor() {}
@@ -10,13 +7,73 @@ export class Utils {
 		console.error(error);
 	}
 
-	// checks if any of the passed strings is blank
-	public static isBlank(...strings: string[]): boolean {
-		if (isNullOrUndefined(strings) || strings.length == 0) {
-			return true;
+	public static decodeBase64(encoded: string): string {
+		return window.atob(decodeURIComponent(encoded));
+	}
+
+	public static delay(millis: number): Promise<void> {
+		return new Promise<void>(resolve => setTimeout(resolve, millis));
+	}
+
+	public static encodeBase64(plain: string): string {
+		return window.btoa(plain);
+	}
+
+	public static getStringValue(object: any): string {
+		if (!Utils.isNullOrUndefined(object)) {
+			let objectType: string = typeof object;
+			switch (objectType) {
+				case "string": {
+					return object;
+				}
+				case "number": {
+					return object.toString();
+				}
+				case "object": {
+					if (object instanceof Date) {
+						return object.toLocaleString();
+					}
+
+					return object.toString();
+				}
+			}
 		}
 
-		return strings.some((string: string) => (isNullOrUndefined(string) || string.trim().length == 0));
+		return ""
+	}
+
+	public static deleteObjectFromList(list: any[], id: any): void {
+		for (let i: number = 0; i < list.length; i++) {
+			if (list[i].id === id) {
+				list.splice(i, 1);
+
+				return;
+			}
+		}
+	}
+
+	public static isBlank(string: string): boolean {
+		return Utils.isNullOrUndefined(string) || string.trim().length === 0;
+	}
+
+	public static isEmpty<T>(list: T[]): boolean {
+		return Utils.isNullOrUndefined(list) || list.length === 0;
+	}
+
+	public static isEmptyObject(object: any): boolean {
+		return (Utils.isNullOrUndefined(object) || (Object.keys(object).length === 0));
+	}
+
+	public static isNull(object: any): boolean {
+		return object === null;
+	}
+
+	public static isNullOrUndefined(object: any): boolean {
+		return Utils.isNull(object) || Utils.isUndefined(object);
+	}
+
+	public static isUndefined(object: any): boolean {
+		return object === undefined;
 	}
 
 	// get map example

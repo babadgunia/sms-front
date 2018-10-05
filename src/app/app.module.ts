@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 // angular > forms
 import {FormsModule} from '@angular/forms';
 // angular > http
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 // angular > platform browser
 import {BrowserModule} from '@angular/platform-browser';
 // angular > platform browser > animations
@@ -24,8 +24,8 @@ import {UserService} from './service/user.service';
 // routing
 import {AppRoutingModule} from './app-routing.model';
 // util
-import {CanActivateAuthGuard} from './util/can-activate.authguard';
-import {INJECTABLE_CONSTANTS} from './util/injectable-constants';
+import {CanActivateAuthGuard} from './util/helper/can-activate.authguard';
+import {INJECTABLE_CONSTANTS} from './util/static/injectable-constants';
 // primeng > component
 import {ButtonModule} from 'primeng/components/button/button';
 import {ConfirmDialogModule} from 'primeng/components/confirmdialog/confirmdialog';
@@ -39,11 +39,15 @@ import {TreeModule} from 'primeng/components/tree/tree';
 // primeng > service
 import {ConfirmationService} from 'primeng/components/common/confirmationservice';
 import {MessageService} from 'primeng/components/common/messageservice';
+import {ForbiddenComponent} from "./component/forbidden/forbidden.component";
+import {DataExchangeService} from "./service/data-exchange.service";
+import {ErrorInterceptor} from "./util/helper/error-interceptor";
 
 @NgModule({
 	declarations: [
 		// component
 		AppComponent,
+		ForbiddenComponent,
 		ForgotPasswordComponent,
 		UpdatePasswordComponent,
 		LoginComponent,
@@ -74,8 +78,9 @@ import {MessageService} from 'primeng/components/common/messageservice';
 		TreeModule
 	],
 	providers: [
-		// service
 		AuthenticationService,
+		// service
+		DataExchangeService,
 		TextService,
 		UserGroupService,
 		UserService,
@@ -84,7 +89,12 @@ import {MessageService} from 'primeng/components/common/messageservice';
 		INJECTABLE_CONSTANTS,
 		// primeng > service
 		ConfirmationService,
-		MessageService
+		MessageService,
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: ErrorInterceptor,
+			multi: true
+		},
 	],
 	bootstrap: [AppComponent]
 })

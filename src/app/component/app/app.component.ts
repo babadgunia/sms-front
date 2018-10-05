@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {AbstractComponent} from '../abstract-component';
 // service
 // util
-import {AuthenticationUtils} from '../../util/authentication-utils';
+import {AuthUtils} from '../../util/auth-utils';
 import {Utils} from '../../util/utils';
 // primeng > service
 import {ConfirmationService} from 'primeng/components/common/confirmationservice';
@@ -24,11 +24,11 @@ export class AppComponent extends AbstractComponent {
 	}
 
 	private isLoggedIn(): boolean {
-		return AuthenticationUtils.isLoggedIn();
+		return AuthUtils.isLoggedIn();
 	}
 
 	private logout(): void {
-		AuthenticationUtils.logout();
+		AuthUtils.logout();
 
 		this.router.navigate(['/login']).then((result: boolean) => {}, (error: any) => {
 				Utils.handleError(error);

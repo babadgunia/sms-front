@@ -1,20 +1,20 @@
 // angular > core
 import {Component, OnInit} from '@angular/core';
 // model > entity
-import {Permission} from '../../model/entity/permission';
-import {UserGroup} from '../../model/entity/user-group';
+import {Permission} from '../../model/dto/permission';
+import {UserGroup} from '../../model/dto/user-group';
 // model > filter
 import {UserGroupFilter} from '../../model/filter/user-group-filter';
 // model > enum
-import {PermissionGroupType} from '../../model/enum/permission-group-type.enum';
-import {PermissionType} from '../../model/enum/permission-type.enum';
+import {PermissionGroupType} from '../../model/type/permission-group-type.enum';
+import {PermissionType} from '../../model/type/permission-type.enum';
 // component
 import {AbstractComponent} from '../abstract-component';
 // service
 import {UserGroupService} from '../../service/user-group.service';
 // util
-import {SYSTEM_PERMISSIONS} from '../../util/system-permissions';
-import {SystemPermission} from '../../util/system-permission';
+import {SYSTEM_PERMISSIONS} from '../../util/static/system-permissions';
+import {SystemPermission} from '../../util/static/system-permission';
 import {isNullOrUndefined} from 'util';
 import {Utils} from '../../util/utils';
 // primeng > model
