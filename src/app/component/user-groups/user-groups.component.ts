@@ -31,17 +31,17 @@ import {MessageService} from 'primeng/components/common/messageservice';
 })
 export class UserGroupsComponent extends AbstractComponent implements OnInit {
 
-	private entities: UserGroup[];
+	public entities: UserGroup[];
 
-	private entity: UserGroup = new UserGroup();
+	public entity: UserGroup = new UserGroup();
 
 	private filter: UserGroupFilter;
 
 	// tree fields
 
-	private permissions: TreeNode[];
+	public permissions: TreeNode[];
 
-	private selectedPermissions: TreeNode[];
+	public selectedPermissions: TreeNode[];
 
 	public constructor(private service: UserGroupService, confirmationService: ConfirmationService, messageService: MessageService) {
 		super(confirmationService, messageService);
@@ -73,14 +73,14 @@ export class UserGroupsComponent extends AbstractComponent implements OnInit {
 		});
 	}
 
-	private resetFilter(idField: HTMLInputElement, nameField: HTMLInputElement): void {
+	public resetFilter(idField: HTMLInputElement, nameField: HTMLInputElement): void {
 		idField.value = '';
 		nameField.value = '';
 
 		this.filter = {};
 	}
 
-	private initFilter(id: number, name: string): void {
+	public initFilter(id: number, name: string): void {
 		this.filter = {};
 		super.initPagingFilter(this.filter);
 		this.initFilterFields(id, name);
@@ -91,7 +91,7 @@ export class UserGroupsComponent extends AbstractComponent implements OnInit {
 		this.filter.name = name;
 	}
 
-	private initTableFilter(event: LazyLoadEvent, id: number, name: string): void {
+	public initTableFilter(event: LazyLoadEvent, id: number, name: string): void {
 		this.filter = {};
 		super.initLazyPagingFilter(this.filter, event);
 		this.initFilterFields(id, name);
@@ -203,7 +203,7 @@ export class UserGroupsComponent extends AbstractComponent implements OnInit {
 		}, (error: any) => super.handleError(error));
 	}
 
-	private getList(): void {
+	public getList(): void {
 		this.loading = true;
 
 		this.service.getCount(this.filter).subscribe((count: number) => {

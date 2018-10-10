@@ -32,13 +32,13 @@ import {isNullOrUndefined} from 'util';
 })
 export class UsersComponent extends AbstractComponent implements OnInit {
 
-	protected readonly userGroups: SelectItem[] = [];
+	public readonly userGroups: SelectItem[] = [];
 
-	private entities: User[];
+	public entities: User[];
 
-	private entity: User = new User();
+	public entity: User = new User();
 
-	private filter: UserFilter;
+	public filter: UserFilter;
 
 	public constructor(private service: UserService, private userGroupService: UserGroupService, confirmationService: ConfirmationService, messageService: MessageService) {
 		super(confirmationService, messageService);
@@ -57,7 +57,7 @@ export class UsersComponent extends AbstractComponent implements OnInit {
 		}, (error: any) => super.handleError(error));
 	}
 
-	private resetFilter(idField: HTMLInputElement, usernameField: HTMLInputElement, emailField: HTMLInputElement, nameField: HTMLInputElement,
+	public resetFilter(idField: HTMLInputElement, usernameField: HTMLInputElement, emailField: HTMLInputElement, nameField: HTMLInputElement,
 											statusBox: Dropdown, languageBox: Dropdown, userGroupBox: Dropdown): void {
 		idField.value = '';
 		usernameField.value = '';
@@ -74,7 +74,7 @@ export class UsersComponent extends AbstractComponent implements OnInit {
 		this.filter = {};
 	}
 
-	private initFilter(id: number, username: string, email: string, name: string, status: string, language: string, userGroup: UserGroup): void {
+	public initFilter(id: number, username: string, email: string, name: string, status: string, language: string, userGroup: UserGroup): void {
 		this.filter = {};
 		super.initPagingFilter(this.filter);
 		this.initFilterFields(id, username, email, name, status, language, userGroup);
@@ -93,7 +93,7 @@ export class UsersComponent extends AbstractComponent implements OnInit {
 		}
 	}
 
-	private initLazyFilter(event: LazyLoadEvent, id: number, username: string, email: string, name: string, status: string, language: string, userGroup: UserGroup): void {
+	public initLazyFilter(event: LazyLoadEvent, id: number, username: string, email: string, name: string, status: string, language: string, userGroup: UserGroup): void {
 		this.filter = {};
 		super.initLazyPagingFilter(this.filter, event);
 		this.initFilterFields(id, username, email, name, status, language, userGroup);
@@ -189,7 +189,7 @@ export class UsersComponent extends AbstractComponent implements OnInit {
 		}, (error: any) => super.handleError(error));
 	}
 
-	private getList(): void {
+	public getList(): void {
 		this.loading = true;
 
 		this.service.getCount(this.filter).subscribe((count: number) => {

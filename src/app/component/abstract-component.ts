@@ -22,81 +22,81 @@ export abstract class AbstractComponent implements OnInit {
 
 	// search filter constants
 
-	protected readonly searchFilterClearButtonIcon: string = "fa-minus";
+	public readonly searchFilterClearButtonIcon: string = "fa-minus";
 
-	protected readonly searchFilterSearchButtonIcon: string = "fa-search";
+	public readonly searchFilterSearchButtonIcon: string = "fa-search";
 
 	// search table general constants
 
-	protected readonly searchTableRows: number = 15;
+	public readonly searchTableRows: number = 15;
 
-	protected readonly searchTablePageLinks: number = 3;
+	public readonly searchTablePageLinks: number = 3;
 
 	// search table action column constants
 
-	protected readonly searchTableActionColumnClass: string = "c-search-table-action-column";
+	public readonly searchTableActionColumnClass: string = "c-search-table-action-column";
 
-	protected readonly searchTableActionColumnButtonClass: string = "c-full-width";
+	public readonly searchTableActionColumnButtonClass: string = "c-full-width";
 
-	protected readonly searchTableActionColumnAddButtonIcon: string = "fa-plus";
+	public readonly searchTableActionColumnAddButtonIcon: string = "fa-plus";
 
-	protected readonly searchTableActionColumnViewEditButtonWrapperClass: string = "c-search-table-action-column-view-edit-button-wrapper";
+	public readonly searchTableActionColumnViewEditButtonWrapperClass: string = "c-search-table-action-column-view-edit-button-wrapper";
 
-	protected readonly searchTableActionColumnViewButtonIcon: string = "fa-envelope-open";
+	public readonly searchTableActionColumnViewButtonIcon: string = "fa-envelope-open";
 
-	protected readonly searchTableActionColumnEditButtonIcon: string = "fa-pencil";
+	public readonly searchTableActionColumnEditButtonIcon: string = "fa-pencil";
 
-	protected readonly searchTableActionColumnDeleteButtonWrapperClass: string = "c-search-table-action-column-delete-button-wrapper";
+	public readonly searchTableActionColumnDeleteButtonWrapperClass: string = "c-search-table-action-column-delete-button-wrapper";
 
-	protected readonly searchTableActionColumnDeleteButtonIcon: string = "fa-remove";
+	public readonly searchTableActionColumnDeleteButtonIcon: string = "fa-remove";
 
 	// form dialog constants
 
-	protected readonly formDialogClass: string = "c-form-dialog";
+	public readonly formDialogClass: string = "c-form-dialog";
 
-	protected readonly formDialogContentStyle: object = {'overflow': 'visible'};
+	public readonly formDialogContentStyle: object = {'overflow': 'visible'};
 
-	protected readonly formComponentClass: string = "c-full-width";
+	public readonly formComponentClass: string = "c-full-width";
 
-	protected readonly formSaveButtonIcon: string = "fa-check";
+	public readonly formSaveButtonIcon: string = "fa-check";
 
-	protected readonly formCancelButtonIcon: string = "fa-close";
+	public readonly formCancelButtonIcon: string = "fa-close";
 
 	// confirm dialog constants
 
-	protected readonly confirmDialogIcon: string = "fa-question-circle";
+	public readonly confirmDialogIcon: string = "fa-question-circle";
 
 	// enum lists
 
-	protected readonly languageTypes: string[] = Object.keys(LanguageType).filter((key: string) => !isNumeric(key));
+	public readonly languageTypes: string[] = Object.keys(LanguageType).filter((key: string) => !isNumeric(key));
 
-	protected readonly statusTypes: string[] = Object.keys(StatusType).filter((key: string) => !isNumeric(key));
+	public readonly statusTypes: string[] = Object.keys(StatusType).filter((key: string) => !isNumeric(key));
 
 	// lists for dropdowns
 
-	protected readonly languages: SelectItem[] = [];
+	public readonly languages: SelectItem[] = [];
 
-	protected readonly statuses: SelectItem[] = [];
+	public readonly statuses: SelectItem[] = [];
 
-	protected readonly texts: SelectItem[] = [];
+	public readonly texts: SelectItem[] = [];
 
 	// table fields
 
-	protected tableTotalRecords: number = 0;
+	public tableTotalRecords: number = 0;
 
-	protected loading: boolean = true;
+	public loading: boolean = true;
 
 	// dialog fields
 
-	protected showDialog: boolean = false;
+	public showDialog: boolean = false;
 
-	protected isAdd: boolean = false;
+	public isAdd: boolean = false;
 
-	protected isEdit: boolean = false;
+	public isEdit: boolean = false;
 
-	protected isView: boolean = false;
+	public isView: boolean = false;
 
-	protected constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
+	public constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
 
 	public ngOnInit(): void {
 		// init languages for dropdown
@@ -124,7 +124,7 @@ export abstract class AbstractComponent implements OnInit {
 	}
 
 	// check user permission
-	protected hasPermission(permission: string): boolean {
+	public hasPermission(permission: string): boolean {
 		return AuthUtils.hasPermission(permission);
 	}
 
@@ -134,29 +134,29 @@ export abstract class AbstractComponent implements OnInit {
 	}
 
 	// adds error message to the growl component
-	protected showErrorMessage(message: string, ...params: any[]): void {
+	public showErrorMessage(message: string, ...params: any[]): void {
 		this.messageService.add({severity: 'error', detail: this.getMessage(message, params)});
 	}
 
 	// handles component errors
-	protected handleError(error: any): void {
+	public handleError(error: any): void {
 		console.error(error);
 	}
 
 	// initializes abstract filter paging fields
-	protected initPagingFilter(filter: AbstractFilter): void {
+	public initPagingFilter(filter: AbstractFilter): void {
 		filter.offset = 0;
 		filter.numRows = this.searchTableRows;
 	}
 
 	// initializes abstract filter paging fields through a lazy load event
-	protected initLazyPagingFilter(filter: AbstractFilter, event: LazyLoadEvent): void {
+	public initLazyPagingFilter(filter: AbstractFilter, event: LazyLoadEvent): void {
 		filter.offset = event.first;
 		filter.numRows = event.rows;
 	}
 
 	// initializes confirm dialog
-	protected confirmAction(action: () => any): void {
+	public confirmAction(action: () => any): void {
 		this.confirmationService.confirm({
 			header: this.getMessage('CONFIRMATION'),
 			message: this.getMessage('CONFIRM_ACTION_MESSAGE'),
@@ -168,7 +168,7 @@ export abstract class AbstractComponent implements OnInit {
 	}
 
 	// updates form dialog states and shows it
-	protected updateDialogStates(isAdd: boolean, isEdit: boolean, isView: boolean): void {
+	public updateDialogStates(isAdd: boolean, isEdit: boolean, isView: boolean): void {
 		this.isAdd = isAdd;
 		this.isEdit = isEdit;
 		this.isView = isView;
@@ -177,7 +177,7 @@ export abstract class AbstractComponent implements OnInit {
 	}
 
 	// hides form dialog
-	protected hideDialog(): void {
+	public hideDialog(): void {
 		this.showDialog = false;
 	}
 }

@@ -24,9 +24,9 @@ import {MessageService} from 'primeng/components/common/messageservice';
 })
 export class TextsComponent extends AbstractComponent {
 
-	private entities: Text[];
+	public entities: Text[];
 
-	private entity: Text = <Text>{};
+	public entity: Text = <Text>{};
 
 	private filter: TextFilter;
 
@@ -38,14 +38,14 @@ export class TextsComponent extends AbstractComponent {
 		super(confirmationService, messageService);
 	}
 
-	private resetFilter(keyField: HTMLInputElement, valueField: HTMLInputElement): void {
+	public resetFilter(keyField: HTMLInputElement, valueField: HTMLInputElement): void {
 		keyField.value = '';
 		valueField.value = '';
 
 		this.filter = {};
 	}
 
-	private initFilter(key: string, value: string): void {
+	public initFilter(key: string, value: string): void {
 		this.filter = {};
 		super.initPagingFilter(this.filter);
 		this.initFilterFields(key, value);
@@ -56,7 +56,7 @@ export class TextsComponent extends AbstractComponent {
 		this.filter.value = value;
 	}
 
-	private initTableFilter(event: LazyLoadEvent, key: string, value: string): void {
+	public initTableFilter(event: LazyLoadEvent, key: string, value: string): void {
 		this.filter = {};
 		super.initLazyPagingFilter(this.filter, event);
 		this.initFilterFields(key, value);
@@ -173,7 +173,7 @@ export class TextsComponent extends AbstractComponent {
 		}, (error: any) => super.handleError(error));
 	}
 
-	private getList(): void {
+	public getList(): void {
 		this.loading = true;
 
 		this.service.getCount(this.filter).subscribe((count: number) => {
