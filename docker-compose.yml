@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  app:
+    image: 'sms-front'
+    build: '.'
+    ports:
+      - 3000:80
