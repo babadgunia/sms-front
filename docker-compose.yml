@@ -4,5 +4,6 @@ services:
   app:
     image: 'sms-front'
     build: '.'
+    container_name: 'sms-front'
     ports:
       - 3000:80
