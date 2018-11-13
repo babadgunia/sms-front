@@ -7,12 +7,12 @@ import {AuthUtils} from '../util/auth-utils';
 // rxjs
 import {Observable} from "rxjs/internal/Observable";
 
-export abstract class AbstractService {
+export abstract class AbstractService<T> {
 
 	protected constructor(private http: HttpClient, private serviceUrl: string) {}
 
 	// makes an http request
-	protected httpRequest(requestType: HttpRequestType, url: string, body?: any, options?: { headers?: HttpHeaders, params?: HttpParams | { [param: string]: string; } }): Observable<any> {
+	protected httpRequest(requestType: HttpRequestType, url: string, body?: any, options?: { headers?: HttpHeaders, params?: HttpParams | { [param: string]: string; } }): Observable<T> {
 		url = this.serviceUrl + '/' + url;
 		options.headers = options.headers ? options.headers : AuthUtils.getApiHeaders();
 
@@ -21,16 +21,16 @@ export abstract class AbstractService {
 				return this.http.delete(url, options);
 			}
 			case HttpRequestType.GET: {
-				return this.http.get(url, options);
+				return this.http.get<T>(url, options);
 			}
 			case HttpRequestType.PATCH: {
-				return this.http.patch(url, body, options);
+				return this.http.patch<T>(url, body, options);
 			}
 			case HttpRequestType.POST: {
-				return this.http.post(url, body, options);
+				return this.http.post<T>(url, body, options);
 			}
 			case HttpRequestType.PUT: {
-				return this.http.put(url, body, options);
+				return this.http.put<T>(url, body, options);
 			}
 		}
 	}
