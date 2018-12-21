@@ -22,7 +22,7 @@ import {TextService} from './service/text.service';
 import {UserGroupService} from './service/user-group.service';
 import {UserService} from './service/user.service';
 // routing
-import {AppRoutingModule} from './app-routing.model';
+import {AppRoutingModule} from './app-routing.module';
 // util
 import {CanActivateAuthGuard} from './util/helper/can-activate.authguard';
 import {INJECTABLE_CONSTANTS} from './util/static/injectable-constants';
