@@ -1,5 +1,3 @@
-// util
-
 export enum TimeUnitType {
 
 	SECOND,

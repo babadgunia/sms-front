@@ -12,7 +12,8 @@
 	</p-toolbar>
 
 	<div class="ui-g-12 ui-g-nopad">
-		<p-dataTable [value]="entities" [immutable]="false" [lazy]="true" [paginator]="true" [totalRecords]="tableTotalRecords" [rows]="searchTableRows" [pageLinks]="searchTablePageLinks"
+		<p-dataTable [value]="entities" [immutable]="false" [lazy]="true" [paginator]="true" [totalRecords]="tableTotalRecords" [rows]="searchTableRows"
+								 [pageLinks]="searchTablePageLinks"
 								 [loading]="loading" (onLazyLoad)="initTableFilter($event, idField.value, nameField.value); getList()">
 			<p-column field="id" [header]="getMessage('ID')"></p-column>
 			<p-column field="name" [header]="getMessage('NAME')"></p-column>

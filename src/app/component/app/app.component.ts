@@ -33,6 +33,6 @@ export class AppComponent extends AbstractComponent {
 		this.router.navigate(['/login']).then((result: boolean) => {}, (error: any) => {
 				Utils.handleError(error);
 			}
-		)
+		);
 	}
 }

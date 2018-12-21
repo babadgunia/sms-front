@@ -13,7 +13,7 @@ import {AbstractService} from './abstract-service';
 // util
 import {USER_SERVICE_URL} from '../util/static/injectable-constants';
 // rxjs
-import {Observable} from "rxjs/internal/Observable";
+import {Observable} from 'rxjs/internal/Observable';
 
 @Injectable()
 export class UserService extends AbstractService<User> {
@@ -23,11 +23,11 @@ export class UserService extends AbstractService<User> {
 	}
 
 	public add(entity: User): Observable<User> {
-		return super.httpRequest(HttpRequestType.POST, "add", entity);
+		return super.httpRequest(HttpRequestType.POST, 'add', entity);
 	}
 
 	public update(entity: User): Observable<User> {
-		return super.httpRequest(HttpRequestType.POST, "update", entity);
+		return super.httpRequest(HttpRequestType.POST, 'update', entity);
 	}
 
 	public delete(id: number): Observable<void> {
@@ -39,10 +39,10 @@ export class UserService extends AbstractService<User> {
 	}
 
 	public getCount(filter: UserFilter): Observable<number> {
-		return super.httpRequest(HttpRequestType.POST, "getCount", filter);
+		return super.httpRequest(HttpRequestType.POST, 'getCount', filter);
 	}
 
 	public getList(filter: UserFilter): Observable<User[]> {
-		return super.httpRequest(HttpRequestType.POST, "getList", filter);
+		return super.httpRequest(HttpRequestType.POST, 'getList', filter);
 	}
 }

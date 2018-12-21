@@ -1,4 +1,4 @@
-import {environment} from "../../../environments/environment";
+import {environment} from '../../../environments/environment';
 
 export const API_BASE_URL: string = environment.host + 'api/';
 export const AUTH_SERVICE_URL: string = API_BASE_URL + 'auth';

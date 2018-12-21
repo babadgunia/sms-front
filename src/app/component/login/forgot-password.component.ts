@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from '../../service/authentication.service';
 import {MessageService} from 'primeng/components/common/messageservice';
 
-
 @Component({
 	selector: 'forgotPassword',
 	templateUrl: 'forgot-password.component.html',

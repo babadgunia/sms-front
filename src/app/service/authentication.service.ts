@@ -10,7 +10,7 @@ import {AbstractService} from './abstract-service';
 import {AUTH_SERVICE_URL} from '../util/static/injectable-constants';
 import {AuthUtils} from '../util/auth-utils';
 // rxjs
-import {Observable} from "rxjs/internal/Observable";
+import {Observable} from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AuthenticationService extends AbstractService<any> {
@@ -20,7 +20,7 @@ export class AuthenticationService extends AbstractService<any> {
 	}
 
 	public login(username: string, password: string): Observable<any> {
-		return super.httpRequest(HttpRequestType.POST, "", {username: username, password: password}, {headers: AuthUtils.getApiLoginHeaders()});
+		return super.httpRequest(HttpRequestType.POST, '', {username: username, password: password}, {headers: AuthUtils.getApiLoginHeaders()});
 	}
 
 	public resetPassword(usernameOrEmail: string): Observable<any> {

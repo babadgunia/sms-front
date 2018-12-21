@@ -23,13 +23,13 @@ export class Utils {
 		if (!Utils.isNullOrUndefined(object)) {
 			let objectType: string = typeof object;
 			switch (objectType) {
-				case "string": {
+				case 'string': {
 					return object;
 				}
-				case "number": {
+				case 'number': {
 					return object.toString();
 				}
-				case "object": {
+				case 'object': {
 					if (object instanceof Date) {
 						return object.toLocaleString();
 					}
@@ -39,7 +39,7 @@ export class Utils {
 			}
 		}
 
-		return ""
+		return '';
 	}
 
 	public static deleteObjectFromList(list: any[], id: any): void {

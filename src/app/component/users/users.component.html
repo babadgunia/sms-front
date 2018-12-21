@@ -19,7 +19,8 @@
 	</p-toolbar>
 
 	<div class="ui-g-12 ui-g-nopad">
-		<p-dataTable [value]="entities" [immutable]="false" [lazy]="true" [paginator]="true" [totalRecords]="tableTotalRecords" [rows]="searchTableRows" [pageLinks]="searchTablePageLinks"
+		<p-dataTable [value]="entities" [immutable]="false" [lazy]="true" [paginator]="true" [totalRecords]="tableTotalRecords" [rows]="searchTableRows"
+								 [pageLinks]="searchTablePageLinks"
 								 [loading]="loading"
 								 (onLazyLoad)="initLazyFilter($event, idField.value, usernameField.value, emailField.value, nameField.value, statusBox.value, languageBox.value, userGroupBox.value);
 								 getList()">
@@ -38,7 +39,8 @@
 				</ng-template>
 				<ng-template pTemplate="body" let-entity="rowData">
 					<div class="ui-g">
-						<div class="ui-g-nopad {{hasPermission('USER.DELETE') ? searchTableActionColumnViewEditButtonWrapperClass : ''}}" [class.ui-g-12]="!hasPermission('USER.DELETE')"
+						<div class="ui-g-nopad {{hasPermission('USER.DELETE') ? searchTableActionColumnViewEditButtonWrapperClass : ''}}"
+								 [class.ui-g-12]="!hasPermission('USER.DELETE')"
 								 [class.ui-g-6]="hasPermission('USER.DELETE')">
 							<button pButton [title]="getMessage('EDIT')" [icon]="searchTableActionColumnEditButtonIcon" [class]="searchTableActionColumnButtonClass"
 											(click)="updateDialogStates(false, true, false); get(entity)" *ngIf="hasPermission('USER.EDIT')"></button>
@@ -103,7 +105,8 @@
 	</div>
 
 	<p-footer>
-		<button pButton [label]="getMessage('RESET_PASSWORD')" icon="fa-retweet" (click)="resetPassword(); hideDialog()" *ngIf="isEdit && hasPermission('USER.RESET_PASSWORD')"></button>
+		<button pButton [label]="getMessage('RESET_PASSWORD')" icon="fa-retweet" (click)="resetPassword(); hideDialog()"
+						*ngIf="isEdit && hasPermission('USER.RESET_PASSWORD')"></button>
 		<button pButton [label]="getMessage('SAVE')" [icon]="formSaveButtonIcon" (click)="save()" *ngIf="!isView"></button>
 		<button pButton [label]="getMessage('CANCEL')" [icon]="formCancelButtonIcon" (click)="hideDialog()"></button>
 	</p-footer>

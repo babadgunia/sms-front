@@ -1,13 +1,13 @@
 // util
-import {Utils} from "./utils";
-import {MESSAGES} from "./static/messages";
+import {Utils} from './utils';
+import {MESSAGES} from './static/messages';
 
 export class AppUtils {
 
-	public static readonly DEFAULT_LANGUAGE: string = "EN";
+	public static readonly DEFAULT_LANGUAGE: string = 'EN';
 
 	public static getHttpStatusMessage(status: number, ...params: any[]) {
-		return AppUtils.getMessage("HTTP_STATUS_" + status, params);
+		return AppUtils.getMessage('HTTP_STATUS_' + status, params);
 	}
 
 	public static getLanguage(): string {
@@ -34,7 +34,7 @@ export class AppUtils {
 		}
 
 		for (let i: number = 0; i < params.length; i++) {
-			value = value.replace("{" + i + "}", params[i]);
+			value = value.replace('{' + i + '}', params[i]);
 		}
 
 		return value;

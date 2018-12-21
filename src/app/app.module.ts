@@ -10,8 +10,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // component
 import {AppComponent} from './component/app/app.component';
-import {ForgotPasswordComponent} from './component/login/forgot-password.component'
-import {UpdatePasswordComponent} from "./component/login/update-password.component";
+import {ForgotPasswordComponent} from './component/login/forgot-password.component';
+import {UpdatePasswordComponent} from './component/login/update-password.component';
 import {LoginComponent} from './component/login/login.component';
 import {TextsComponent} from './component/texts/texts.component';
 import {UserGroupsComponent} from './component/user-groups/user-groups.component';
@@ -39,9 +39,9 @@ import {TreeModule} from 'primeng/components/tree/tree';
 // primeng > service
 import {ConfirmationService} from 'primeng/components/common/confirmationservice';
 import {MessageService} from 'primeng/components/common/messageservice';
-import {ForbiddenComponent} from "./component/forbidden/forbidden.component";
-import {DataExchangeService} from "./service/data-exchange.service";
-import {ErrorInterceptor} from "./util/helper/error-interceptor";
+import {ForbiddenComponent} from './component/forbidden/forbidden.component';
+import {DataExchangeService} from './service/data-exchange.service';
+import {ErrorInterceptor} from './util/helper/error-interceptor';
 
 @NgModule({
 	declarations: [
@@ -94,7 +94,7 @@ import {ErrorInterceptor} from "./util/helper/error-interceptor";
 			provide: HTTP_INTERCEPTORS,
 			useClass: ErrorInterceptor,
 			multi: true
-		},
+		}
 	],
 	bootstrap: [AppComponent]
 })

@@ -6,7 +6,6 @@ import {AbstractFilter} from '../model/filter/abstract-filter';
 import {LanguageType} from '../model/type/language-type.enum';
 import {StatusType} from '../model/type/status-type.enum';
 // util
-import {MESSAGES} from '../util/static/messages';
 import {AuthUtils} from '../util/auth-utils';
 // primeng > model
 import {LazyLoadEvent} from 'primeng/components/common/lazyloadevent';
@@ -15,16 +14,16 @@ import {SelectItem} from 'primeng/components/common/selectitem';
 import {ConfirmationService} from 'primeng/components/common/confirmationservice';
 import {MessageService} from 'primeng/components/common/messageservice';
 // rxjs
-import {isNumeric} from "rxjs/internal-compatibility";
-import {AppUtils} from "../util/app-utils";
+import {isNumeric} from 'rxjs/internal-compatibility';
+import {AppUtils} from '../util/app-utils';
 
 export abstract class AbstractComponent implements OnInit {
 
 	// search filter constants
 
-	public readonly searchFilterClearButtonIcon: string = "fa-minus";
+	public readonly searchFilterClearButtonIcon: string = 'fa-minus';
 
-	public readonly searchFilterSearchButtonIcon: string = "fa-search";
+	public readonly searchFilterSearchButtonIcon: string = 'fa-search';
 
 	// search table general constants
 
@@ -34,37 +33,37 @@ export abstract class AbstractComponent implements OnInit {
 
 	// search table action column constants
 
-	public readonly searchTableActionColumnClass: string = "c-search-table-action-column";
+	public readonly searchTableActionColumnClass: string = 'c-search-table-action-column';
 
-	public readonly searchTableActionColumnButtonClass: string = "c-full-width";
+	public readonly searchTableActionColumnButtonClass: string = 'c-full-width';
 
-	public readonly searchTableActionColumnAddButtonIcon: string = "fa-plus";
+	public readonly searchTableActionColumnAddButtonIcon: string = 'fa-plus';
 
-	public readonly searchTableActionColumnViewEditButtonWrapperClass: string = "c-search-table-action-column-view-edit-button-wrapper";
+	public readonly searchTableActionColumnViewEditButtonWrapperClass: string = 'c-search-table-action-column-view-edit-button-wrapper';
 
-	public readonly searchTableActionColumnViewButtonIcon: string = "fa-envelope-open";
+	public readonly searchTableActionColumnViewButtonIcon: string = 'fa-envelope-open';
 
-	public readonly searchTableActionColumnEditButtonIcon: string = "fa-pencil";
+	public readonly searchTableActionColumnEditButtonIcon: string = 'fa-pencil';
 
-	public readonly searchTableActionColumnDeleteButtonWrapperClass: string = "c-search-table-action-column-delete-button-wrapper";
+	public readonly searchTableActionColumnDeleteButtonWrapperClass: string = 'c-search-table-action-column-delete-button-wrapper';
 
-	public readonly searchTableActionColumnDeleteButtonIcon: string = "fa-remove";
+	public readonly searchTableActionColumnDeleteButtonIcon: string = 'fa-remove';
 
 	// form dialog constants
 
-	public readonly formDialogClass: string = "c-form-dialog";
+	public readonly formDialogClass: string = 'c-form-dialog';
 
 	public readonly formDialogContentStyle: object = {'overflow': 'visible'};
 
-	public readonly formComponentClass: string = "c-full-width";
+	public readonly formComponentClass: string = 'c-full-width';
 
-	public readonly formSaveButtonIcon: string = "fa-check";
+	public readonly formSaveButtonIcon: string = 'fa-check';
 
-	public readonly formCancelButtonIcon: string = "fa-close";
+	public readonly formCancelButtonIcon: string = 'fa-close';
 
 	// confirm dialog constants
 
-	public readonly confirmDialogIcon: string = "fa-question-circle";
+	public readonly confirmDialogIcon: string = 'fa-question-circle';
 
 	// enum lists
 

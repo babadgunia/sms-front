@@ -58,7 +58,7 @@ export class UsersComponent extends AbstractComponent implements OnInit {
 	}
 
 	public resetFilter(idField: HTMLInputElement, usernameField: HTMLInputElement, emailField: HTMLInputElement, nameField: HTMLInputElement,
-											statusBox: Dropdown, languageBox: Dropdown, userGroupBox: Dropdown): void {
+										 statusBox: Dropdown, languageBox: Dropdown, userGroupBox: Dropdown): void {
 		idField.value = '';
 		usernameField.value = '';
 		emailField.value = '';

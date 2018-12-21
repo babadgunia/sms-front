@@ -1,9 +1,9 @@
 export const LANGUAGES: any = {
 
 	ENGLISH: {
-		code: "EN"
+		code: 'EN'
 	},
 	GEORGIAN: {
-		code: "KA"
+		code: 'KA'
 	}
 };

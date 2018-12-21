@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {AuthenticationService} from '../../service/authentication.service';
 import {MessageService} from 'primeng/components/common/messageservice';
-
 
 @Component({
 	selector: 'updatePassword',
@@ -26,8 +25,8 @@ export class UpdatePasswordComponent implements OnInit {
 
 	ngOnInit() {
 		this.activatedRoute.queryParams.subscribe((params: Params) => {
-			this.token =  params['token'];
-			this.id =  params['id'];
+			this.token = params['token'];
+			this.id = params['id'];
 		});
 	}
 
@@ -44,5 +43,4 @@ export class UpdatePasswordComponent implements OnInit {
 
 		this.loading = false;
 	}
-
 }

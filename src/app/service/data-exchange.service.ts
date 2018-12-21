@@ -1,8 +1,8 @@
 // angular
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 // rxjs
-import {Observable} from "rxjs/internal/Observable";
-import {Subject} from "rxjs/internal/Subject";
+import {Observable} from 'rxjs/internal/Observable';
+import {Subject} from 'rxjs/internal/Subject';
 
 // service for exchanging data between unrelated components
 @Injectable()

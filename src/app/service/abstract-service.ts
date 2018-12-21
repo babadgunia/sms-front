@@ -5,7 +5,7 @@ import {HttpRequestType} from '../model/type/http-request-type.enum';
 // util
 import {AuthUtils} from '../util/auth-utils';
 // rxjs
-import {Observable} from "rxjs/internal/Observable";
+import {Observable} from 'rxjs/internal/Observable';
 
 export abstract class AbstractService<T> {
 

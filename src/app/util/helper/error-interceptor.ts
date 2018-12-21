@@ -1,13 +1,13 @@
 // angular
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {Injectable} from "@angular/core";
-import {Router} from "@angular/router";
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 // util
-import {HTTP_STATUSES} from "../static/http-statuses";
+import {HTTP_STATUSES} from '../static/http-statuses';
 // rxjs
-import {Observable} from "rxjs/internal/Observable";
-import {throwError} from "rxjs/internal/observable/throwError";
-import {catchError} from "rxjs/operators";
+import {Observable} from 'rxjs/internal/Observable';
+import {throwError} from 'rxjs/internal/observable/throwError';
+import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -18,7 +18,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 		return next.handle(req).pipe(catchError(
 			(error: any) => {
 				if (error.status === HTTP_STATUSES.UNAUTHORIZED.code) {
-					this.router.navigate(["/forbidden"]);
+					this.router.navigate(['/forbidden']);
 				}
 
 				return throwError(error);

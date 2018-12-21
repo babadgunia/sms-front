@@ -37,7 +37,7 @@ export const MESSAGES: any = {
 	},
 	ID: {
 		EN: 'Id',
-		KA: "იდენტიფიკატორი"
+		KA: 'იდენტიფიკატორი'
 	},
 	KEY: {
 		EN: 'Key',
