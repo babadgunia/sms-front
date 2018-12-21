@@ -12,13 +12,14 @@ export abstract class AbstractService<T> {
 	protected constructor(private http: HttpClient, private serviceUrl: string) {}
 
 	// makes an http request
-	protected httpRequest(requestType: HttpRequestType, url: string, body?: any, options?: { headers?: HttpHeaders, params?: HttpParams | { [param: string]: string; } }): Observable<T> {
+	protected httpRequest(requestType: HttpRequestType, url: string, body?: any, options?: { headers?: HttpHeaders, params?: HttpParams | { [param: string]: string; } }):
+		Observable<any> {
 		url = this.serviceUrl + '/' + url;
 		options.headers = options.headers ? options.headers : AuthUtils.getApiHeaders();
 
 		switch (requestType) {
 			case HttpRequestType.DELETE: {
-				return this.http.delete(url, options);
+				return this.http.delete<void>(url, options);
 			}
 			case HttpRequestType.GET: {
 				return this.http.get<T>(url, options);

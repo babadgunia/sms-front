@@ -16,7 +16,7 @@ import {USER_GROUP_SERVICE_URL} from '../util/static/injectable-constants';
 import {Observable} from "rxjs/internal/Observable";
 
 @Injectable()
-export class UserGroupService extends AbstractService {
+export class UserGroupService extends AbstractService<UserGroup> {
 
 	public constructor(http: HttpClient, @Inject(USER_GROUP_SERVICE_URL) serviceUrl: string) {
 		super(http, serviceUrl);

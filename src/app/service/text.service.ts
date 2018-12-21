@@ -16,7 +16,7 @@ import {TEXT_SERVICE_URL} from '../util/static/injectable-constants';
 import {Observable} from "rxjs/internal/Observable";
 
 @Injectable()
-export class TextService extends AbstractService {
+export class TextService extends AbstractService<Text> {
 
 	public constructor(http: HttpClient, @Inject(TEXT_SERVICE_URL) baseUrl: string) {
 		super(http, baseUrl);

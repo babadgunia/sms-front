@@ -13,7 +13,7 @@ import {AuthUtils} from '../util/auth-utils';
 import {Observable} from "rxjs/internal/Observable";
 
 @Injectable()
-export class AuthenticationService extends AbstractService {
+export class AuthenticationService extends AbstractService<any> {
 
 	public constructor(http: HttpClient, @Inject(AUTH_SERVICE_URL) baseUrl: string) {
 		super(http, baseUrl);
@@ -31,5 +31,4 @@ export class AuthenticationService extends AbstractService {
 	public savePassword(password: string, token: string, id: string) {
 		return super.httpRequest(HttpRequestType.POST, `changePassword/${token}/${password}/${id}`, null, {headers: AuthUtils.getApiLoginHeaders()});
 	}
-
 }
